@@ -1,17 +1,17 @@
 {
     "info": {
         "description": "Website",
-        "system": "Neos",
-        "author": "gesagt-getan.at",
+        "system": "Standalone",
+        "author": "networkteam.com",
         "homepage": "https://www.example.com"
     },
 
     "root": {
-        "base": "./Packages/",
-        "src": "Sites/GesagtGetan.Theme/Resources/Private",
-        "dest": "Sites/GesagtGetan.Theme/Resources/Public",
-        "watch": ["Plugins/**/Private/**", "Sites/**/Private/**"],
-        "dontWatch": ["**/Private/Templates/**", "**/WebRoot/**", "Plugins/Jonnitto.Plyr/**", "Plugins/Jonnitto.PhotoSwipe/**","Plugins/Sitegeist.Monocle/**"],
+        "base": "./",
+        "src": "src",
+        "dest": "dist",
+        "watch": ["src"],
+        "dontWatch": ["**/Private/Templates/**", "**/WebRoot/**"],
         "inlineAssets": false,
         "notifications": false
     },
@@ -54,15 +54,13 @@
                 "precision": 10,
                 "sourceComments": true,
                 "includePaths": [
-                    "./Packages/Sites/",
-                    "./Packages/Plugins/",
                     "./node_modules/"
                 ]
             },
             "postcss": {
                 "activateRtlCss": false,
                 "assets": {
-                    "loadPaths": ["Assets", "../Private/Sprite"],
+                    "loadPaths": ["Assets"],
                     "cachebuster": false
                 },
                 "magicAnimations": {"atRoot": true},
@@ -136,8 +134,7 @@
                     "includePaths": {
                         "include": {},
                         "paths": [
-                            "",
-                            "Packages/Plugins"
+                            ""
                         ],
                         "external": [],
                         "extensions": [".js", ".json", ".jsx"]

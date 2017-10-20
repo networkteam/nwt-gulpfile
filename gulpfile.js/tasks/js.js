@@ -6,7 +6,6 @@ if (!config.tasks.js) {
 
 const gulpRollup = require('gulp-rollup');
 const nodeResolve = require('rollup-plugin-node-resolve');
-const bowerResolve = require('rollup-plugin-bower-resolve');
 const includePaths = require('rollup-plugin-includepaths');
 const rollupSourcemaps = require('rollup-plugin-sourcemaps');
 const commonjs = require('rollup-plugin-commonjs');
@@ -32,7 +31,6 @@ if (rollupConfig) {
 
 let rollupPlugins = [
 	includePaths(rollupConfig.plugins.includePaths),
-	bowerResolve(rollupConfig.plugins.bowerResolve),
 	nodeResolve(rollupConfig.plugins.nodeResolve)
 ];
 if (rollupConfig.plugins.commonjs) {

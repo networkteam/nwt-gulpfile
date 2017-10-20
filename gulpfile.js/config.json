@@ -56,7 +56,6 @@
                 "includePaths": [
                     "./Packages/Sites/",
                     "./Packages/Plugins/",
-                    "./bower_components/",
                     "./node_modules/"
                 ]
             },
@@ -128,7 +127,6 @@
                 "format": "iife",
                 "buble": true,
                 "plugins": {
-                    "bowerResolve": {},
                     "nodeResolve": {
                         "module": true,
                         "jsnext": true,

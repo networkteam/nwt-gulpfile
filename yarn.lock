@@ -1211,10 +1211,6 @@ boom@2.x.x:
   dependencies:
     hoek "2.x.x"
 
-bower@^1.8.0:
-  version "1.8.0"
-  resolved "https://registry.yarnpkg.com/bower/-/bower-1.8.0.tgz#55dbebef0ad9155382d9e9d3e497c1372345b44a"
-
 boxen@^1.0.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/boxen/-/boxen-1.2.0.tgz#03478d84be7fe02189b80904d81d6a80384368f1"
@@ -3579,9 +3575,9 @@ gulp-util@~2.2.13:
     through2 "^0.5.0"
     vinyl "^0.2.1"
 
-"gulp@https://github.com/gulpjs/gulp.git#4.0":
+gulp@gulpjs/gulp#4.0:
   version "4.0.0-alpha.2"
-  resolved "https://github.com/gulpjs/gulp.git#3f5aba28718dc19e4bf600fb88f128158ff2ff83"
+  resolved "https://codeload.github.com/gulpjs/gulp/tar.gz/6d71a658c61edb3090221579d8f97dbe086ba2ed"
   dependencies:
     glob-watcher "^3.0.0"
     gulp-cli "^1.0.0"
@@ -4806,13 +4802,13 @@ lodash.values@~2.4.1:
   dependencies:
     lodash.keys "~2.4.1"
 
-lodash@4.17.4, lodash@^4.0.0, lodash@^4.1.0, lodash@^4.12.0, lodash@^4.17.4, lodash@^4.2.0, lodash@^4.3.0:
-  version "4.17.4"
-  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.4.tgz#78203a4d1c328ae1d86dca6460e369b57f4055ae"
-
 lodash@^3.10.1:
   version "3.10.1"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-3.10.1.tgz#5bf45e8e49ba4189e17d482789dfd15bd140b7b6"
+
+lodash@^4.0.0, lodash@^4.1.0, lodash@^4.12.0, lodash@^4.17.4, lodash@^4.2.0, lodash@^4.3.0:
+  version "4.17.4"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.4.tgz#78203a4d1c328ae1d86dca6460e369b57f4055ae"
 
 lodash@~4.16.4:
   version "4.16.6"
@@ -6411,7 +6407,7 @@ punycode@^1.4.1:
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/punycode/-/punycode-1.4.1.tgz#c0d5a63b2718800ad8e1eb0fa5269c84dd41845e"
 
-q@1.5.0, q@^1.1.2:
+q@^1.1.2:
   version "1.5.0"
   resolved "https://registry.yarnpkg.com/q/-/q-1.5.0.tgz#dd01bac9d06d30e6f219aecb8253ee9ebdc308f1"
 
@@ -6850,13 +6846,6 @@ rollup-plugin-babel@^2.7.1:
     babel-plugin-transform-es2015-classes "^6.9.0"
     object-assign "^4.1.0"
     rollup-pluginutils "^1.5.0"
-
-rollup-plugin-bower-resolve@^0.4.0:
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/rollup-plugin-bower-resolve/-/rollup-plugin-bower-resolve-0.4.0.tgz#3109e3ba065034c1fa51be6296e2742e27bc24c8"
-  dependencies:
-    lodash "4.17.4"
-    q "1.5.0"
 
 rollup-plugin-buble@^0.15.0:
   version "0.15.0"

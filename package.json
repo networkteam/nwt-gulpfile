@@ -7,6 +7,9 @@
     "last 2 versions",
     "Explorer > 9"
   ],
+  "bin": {
+    "nwt-frontend-scripts": "./bin/nwt-frontend-scripts.js"
+  },
   "scripts": {
     "postinstall": "bower install",
     "tasks": "gulp -T",
@@ -40,6 +43,7 @@
     "gulp": "https://github.com/gulpjs/gulp.git#4.0",
     "gulp-changed": "^3.1.0",
     "gulp-chmod": "^2.0.0",
+    "gulp-cli": "^1.4.0",
     "gulp-cssbeautify": "^0.1.3",
     "gulp-eslint": "^4.0.0",
     "gulp-flatten": "^0.3.1",

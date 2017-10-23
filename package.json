@@ -1,5 +1,5 @@
 {
-  "name": "nwt-gulpfile",
+  "name": "@networkteam/gulpfile",
   "version": "1.0.6",
   "description": "An opinionated frontend workflow based on jonnitto/gulpfile.js",
   "browserslist": [

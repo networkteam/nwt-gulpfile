@@ -10,7 +10,7 @@
         "base": "./",
         "src": "src",
         "dest": "dist",
-        "watch": ["src"],
+        "watch": ["src/**"],
         "dontWatch": ["**/Private/Templates/**", "**/WebRoot/**"],
         "inlineAssets": false,
         "notifications": false

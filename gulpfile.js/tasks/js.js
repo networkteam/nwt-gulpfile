@@ -62,7 +62,7 @@ function js() {
 		.pipe(mode.maps ? sourcemaps.init({loadMaps: true}) : util.noop())
 		.pipe(gulpRollup({
 			rollup: require('rollup'),
-			entry: new Promise((resolve, reject) => {
+			input: new Promise((resolve, reject) => {
 				glob(paths.src, (error, files) => {
 					resolve(files);
 				});

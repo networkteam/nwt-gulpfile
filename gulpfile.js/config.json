@@ -3,23 +3,22 @@
         "description": "Website",
         "system": "Standalone",
         "author": "networkteam.com",
-        "homepage": "https://www.example.com"
+        "homepage": "https://networkteam.com"
     },
 
     "root": {
         "base": "./",
         "src": "src",
         "dest": "dist",
-        "watch": ["src"],
+        "watch": ["src/**"],
         "dontWatch": ["**/Private/Templates/**", "**/WebRoot/**"],
         "inlineAssets": false,
         "notifications": false
     },
 
     "browserSync": {
-        "enable": false,
         "proxy": "127.0.0.1:8081",
-        "open": true,
+        "open": false,
         "xip": false
     },
 

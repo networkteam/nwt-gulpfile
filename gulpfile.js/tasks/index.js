@@ -1,4 +1,5 @@
 'use strict';
+
 const func = require('../functions');
 
 let task = {
@@ -97,28 +98,33 @@ gulp.task('build').description = util.colors.inverse(' Generates all ') + ' Asse
 gulp.task('build').flags = flags;
 
 // Watch
-task.watch = () => {
-	const TASK = ['css', 'js', 'fonts', 'images', 'static', 'svgSprite'];
+const WATCH_TASKS = ['css', 'js', 'fonts', 'images', 'static', 'svgSprite'];
 
+for (let taskName of WATCH_TASKS) {
+	gulp.task('watch:' + taskName + ':done', task.noop);
+}
+
+task.watch = () => {
 	if (browserSync) {
 		browserSync.init(config.browserSync);
 	}
 
-	TASK.forEach((taskName) => {
+	for (let taskName of WATCH_TASKS) {
 		if (config.tasks[taskName]) {
 			let filesToWatch = func.getFilesToWatch(taskName);
+			const onChange = () => cache.update(taskName);
 			switch (taskName) {
 				case 'css':
-					gulp.watch(filesToWatch, bach.parallel(task.css, task.scssLint)).on('change', cache.update(taskName));
+					gulp.watch(filesToWatch, gulp.series(bach.parallel(task.css, task.scssLint), 'watch:' + taskName + ':done')).on('change', onChange);
 					break;
 				case 'js':
-					gulp.watch(filesToWatch, bach.parallel(task.js, task.jsLint)).on('change', cache.update(taskName));
+					gulp.watch(filesToWatch, gulp.series(bach.parallel(task.js, task.jsLint), 'watch:' + taskName + ':done')).on('change', onChange);
 					break;
 				default:
-					gulp.watch(filesToWatch, task[taskName]).on('change', cache.update(taskName));
+					gulp.watch(filesToWatch, gulp.series(task[taskName], 'watch:' + taskName + ':done')).on('change', onChange);
 			}
 		}
-	});
+	}
 	console.log(util.colors.dim('\n\n   Watching source files for changes\n\n'));
 };
 
@@ -134,3 +140,5 @@ gulp.task('default').flags = flags;
 
 gulp.task('pipeline', gulp.series('build', 'optimizeImages'))
 gulp.task('pipeline').description = 'Build task for pipeline'
+
+

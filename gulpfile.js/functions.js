@@ -250,27 +250,37 @@ function notifyText(object) {
 	}
 }
 
-function buildPath() {
-	const workingDirectory = __dirname,
-		folder = workingDirectory.split('/'),
-		os = require('os');
 
-	// check if we're working local or on typokeeper
+function buildProxyPath() {
+	const workingDirectory = __dirname,
+		folders = workingDirectory.split('/'),
+		os = require('os');
+	/**
+	 * 	os.hostname() return the computers' name and contains .local if you're desktop machine
+	 * 	If working on a local machine, build the proxypath from the projects root folder.
+	 * 	Otherwise you're working on typokeeper. The path will be built according to a custom or global vhost.
+	 */
 	if (os.hostname().match(/local$/)) {
-		const vhostIndex = folder.indexOf('src') + 1;
-		// construct the base url from parts of our working directory
-		// customer name
-		return 'http://' + folder[vhostIndex] + '.flow.dev';
+		// vhostIndex is evaluated from src directory
+		const vhostIndex = folders.indexOf('src') + 1;
+
+		// vhostIndex holds the index which contains the domain-name
+		// it is likely to be the customer's or project's name
+		return 'http://' + folders[vhostIndex] + '.flow.dev';
 	} else {
-		// check if we are in the users directory
+		// User vhosts do have a directory vhosts in the path.
 		if (workingDirectory.indexOf('vhosts')) {
-			// construct the base url from parts of our working directory
-			//				   customer name	 username
-			return 'http://' + folder[4] + '.' + folder[2] + '.cms.dev.interner-server.de/';
+			/**
+			 * folder[4] holds the customer name
+			 * folder[2] holds the username
+ 			 */
+			return 'http://' + folders[4] + '.' + folders[2] + '.cms.dev.interner-server.de/';
 		} else {
-			// construct the base url from parts of the working directory
-			//				   customer name is this time on the second position, because we are not in a user dir
-			return 'http://' + folder[2] + '.dev.interner-server.de/';
+			/**
+			 * There are two directories less (username/vhosts/)
+			 * folder[2] holds the customer name
+ 			 */
+			return 'http://' + folders[2] + '.dev.interner-server.de/';
 		}
 	}
 }
@@ -283,5 +293,5 @@ module.exports = {
 	getFilesToWatch: getFilesToWatch,
 	pluralize: pluralize,
 	notifyText: notifyText,
-	buildPath: buildPath
+	buildProxyPath: buildProxyPath
 };

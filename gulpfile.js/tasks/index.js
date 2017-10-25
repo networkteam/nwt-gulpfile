@@ -106,9 +106,22 @@ for (let taskName of WATCH_TASKS) {
 
 task.watch = () => {
   if (browserSync) {
-    if (config.browserSync.proxy) {
+    /**
+     * cache the config value
+     * @type {exports.callbacks.proxy|String|Object|Boolean|*|proxy}
+     */
+    const proxySetting = config.browserSync.proxy;
+    /**
+     * Change Proxyconfig depending on configuration
+     * proxy = true -> build proxypath
+     * proxy = localhost or internal ip -> use provided host
+     * proxy = false -> serving directory
+     */
+    if (proxySetting === true) {
       config.browserSync.proxy = func.buildProxyPath();
-    } else {
+    } else if (browserSync.match(/^localhost$|^127(?:\.[0-9]+){0,2}\.[0-9]+$|^(?:0*\:)*?:?0*1$)/)) {
+      config.browserSync.proxy = proxySetting;
+    } else if (proxySetting === false) {
       config.browserSync.server.baseDir = './Resources/Public/';
       config.browserSync.server.directory = true;
     }

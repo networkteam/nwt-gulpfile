@@ -1,6 +1,9 @@
-# gulpfile.js
+# @networkteam/gulpfile
 
-gulpfile.js is a delicious blend of tasks and build tools poured into [Gulp](http://gulpjs.com/) to form a full-featured modern asset pipeline. You can easily be integrated to the development environment and site or app structure.
+
+@networkteam/gulpfile is a so called hard-fork of the public package [gulpfile.js](https://github.com/jonnitto/gulpfile.js) by [jonnitto](https://github.com/jonnitto) .
+
+The main reason behind this kind of fork is the way we want to use this package. It is inspired by the package.json of create-react-app.
 
 
 ## Usage
@@ -15,12 +18,7 @@ If you use this library the first time, you need to be shure all global dependen
 # Install Yarn
 brew update
 brew install yarn
-# Uninstall Gulp
-npm uninstall --global gulp gulp-cli
-# Install ScssLint
 gem install scss_lint
-# Install some plugins globally
-npm install --global gulp-cli eslint
 ```
 
 If the global dependencies are installed, you can install the rest with **`yarn`**.

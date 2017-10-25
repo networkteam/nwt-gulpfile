@@ -18,6 +18,89 @@
     "csrfToken": true
   },
   "rules": {
-    "no-console": 0
+    "curly": [
+      2,
+      "all"
+    ],
+    "keyword-spacing": [
+      2,
+      {}
+    ],
+    "wrap-iife": 0,
+    "space-before-function-paren": [
+      2,
+      {
+        "anonymous": "ignore",
+        "named": "never"
+      }
+    ],
+    "array-bracket-spacing": [
+      2,
+      "never",
+      {}
+    ],
+    "space-in-parens": [
+      2,
+      "never"
+    ],
+    "key-spacing": [
+      2,
+      {
+        "beforeColon": false,
+        "afterColon": true
+      }
+    ],
+    "comma-style": [
+      2,
+      "last"
+    ],
+    "space-unary-ops": [
+      2,
+      {
+        "words": false,
+        "nonwords": false
+      }
+    ],
+    "space-infix-ops": 2,
+    "camelcase": [
+      2,
+      {
+        "properties": "never"
+      }
+    ],
+    "no-with": 2,
+    "no-undef": 2,
+    "no-multiple-empty-lines": 2,
+    "linebreak-style": [
+      2,
+      "unix"
+    ],
+    "quotes": [
+      1,
+      "single",
+      {
+        "avoidEscape": true
+      }
+    ],
+    "indent": [
+      2,
+      2,
+      {
+        "SwitchCase": 1
+      }
+    ],
+    "no-mixed-spaces-and-tabs": 2,
+    "no-trailing-spaces": 2,
+    "brace-style": [
+      2,
+      "1tbs",
+      {
+        "allowSingleLine": true
+      }
+    ],
+    "yoda": [
+      2,
+      "never"
+    ]
   }
 }

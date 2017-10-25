@@ -1,6 +1,6 @@
 {
   "name": "@networkteam/gulpfile",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "An opinionated frontend workflow based on jonnitto/gulpfile.js",
   "browserslist": [
     "> 1%",

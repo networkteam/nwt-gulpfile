@@ -17,7 +17,7 @@
     },
 
     "browserSync": {
-        "proxy": "127.0.0.1:8081",
+        "proxy": true,
         "open": false,
         "xip": false
     },
@@ -174,5 +174,4 @@
             "extensions": ["svg"]
         }
     }
-
 }

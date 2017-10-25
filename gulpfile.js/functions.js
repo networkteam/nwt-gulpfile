@@ -84,7 +84,7 @@ function mergeRootConfig(filename) {
 }
 
 function getFolderSiteName(files) {
-	for (var i = 0; i < files.length; i++) {
+	for (let i = 0; i < files.length; i++) {
 		if (!files[i].startsWith('.') && !files[i].startsWith('_')) {
 			return files[i];
 		}
@@ -124,6 +124,7 @@ function mergeConfigAndLoadTasks() {
 
 	if (config.browserSync.enable) {
 		delete config.browserSync.enable;
+		/*global browserSync*/
 		browserSync = require('browser-sync').create();
 	}
 
@@ -250,39 +251,40 @@ function notifyText(object) {
 	}
 }
 
-
 function buildProxyPath() {
-	const workingDirectory = __dirname,
-		folders = workingDirectory.split('/'),
-		os = require('os');
-	/**
-	 * 	os.hostname() return the computers' name and contains .local if you're desktop machine
-	 * 	If working on a local machine, build the proxypath from the projects root folder.
-	 * 	Otherwise you're working on typokeeper. The path will be built according to a custom or global vhost.
-	 */
-	if (os.hostname().match(/local$/)) {
-		// vhostIndex is evaluated from src directory
-		const vhostIndex = folders.indexOf('src') + 1;
+  const workingDirectory = __dirname,
+    folders = workingDirectory.split('/'),
+    os = require('os'),
+    isLocal = !!os.hostname().match(/local$/),
+    isTypo3 = !!folders.indexOf('typo3conf');
 
-		// vhostIndex holds the index which contains the domain-name
-		// it is likely to be the customer's or project's name
-		return 'http://' + folders[vhostIndex] + '.flow.dev';
-	} else {
-		// User vhosts do have a directory vhosts in the path.
-		if (workingDirectory.indexOf('vhosts')) {
-			/**
-			 * folder[4] holds the customer name
-			 * folder[2] holds the username
- 			 */
-			return 'http://' + folders[4] + '.' + folders[2] + '.cms.dev.interner-server.de/';
-		} else {
-			/**
-			 * There are two directories less (username/vhosts/)
-			 * folder[2] holds the customer name
- 			 */
-			return 'http://' + folders[2] + '.dev.interner-server.de/';
-		}
-	}
+  if (isLocal) {
+    // vhostIndex is evaluated from src directory
+    const vhostIndex = folders.indexOf('src') + 1;
+
+    // vhostIndex holds the index which contains the domain-name
+    // it is likely to be the customer's or project's name
+    if (isTypo3) {
+      return 'http://' + folders[vhostIndex] + '.typo3.dev';
+    } else {
+      return 'http://' + folders[vhostIndex] + '.flow.dev';
+    }
+  } else {
+    // User vhosts do have a directory vhosts in the path.
+    if (workingDirectory.indexOf('vhosts')) {
+      /**
+       * folder[4] holds the customer name
+       * folder[2] holds the username
+       */
+      return 'http://' + folders[4] + '.' + folders[2] + '.cms.dev.interner-server.de/';
+    } else {
+      /**
+       * There are two directories less (username/vhosts/)
+       * folder[2] holds the customer name
+       */
+      return 'http://' + folders[2] + '.dev.interner-server.de/';
+    }
+  }
 }
 
 module.exports = {

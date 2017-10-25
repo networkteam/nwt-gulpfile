@@ -106,6 +106,13 @@ for (let taskName of WATCH_TASKS) {
 
 task.watch = () => {
 	if (browserSync) {
+		if(config.browserSync.proxy) {
+			config.browserSync.proxy = buildPath();
+		}else {
+			config.browserSync.server.baseDir = "./Resources/Public/";
+			config.browserSync.server.directory = true;
+		}
+
 		browserSync.init(config.browserSync);
 	}
 

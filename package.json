@@ -2,6 +2,10 @@
   "name": "@networkteam/gulpfile",
   "version": "1.0.10",
   "description": "An opinionated frontend workflow based on jonnitto/gulpfile.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/networkteam/nwt-gulpfile.git"
+  },
   "browserslist": [
     "> 1%",
     "last 2 versions",
@@ -18,7 +22,8 @@
     "css": "gulp css",
     "scss": "gulp scss",
     "js": "gulp js",
-    "images": "gulp optimizeImages"
+    "images": "gulp optimizeImages",
+    "postversion": "git push --follow-tags"
   },
   "dependencies": {
     "autoprefixer": "^7.1.2",
@@ -91,6 +96,9 @@
   "keywords": [
     "gulp"
   ],
-  "author": "Christopher Hlubek",
-  "license": "MIT"
+  "author": "networkteam GmbH",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  }
 }

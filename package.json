@@ -23,7 +23,7 @@
     "scss": "gulp scss",
     "js": "gulp js",
     "images": "gulp optimizeImages",
-    "postversion": "git push --follow-tags"
+    "postversion": "git push && git push --tags"
   },
   "dependencies": {
     "autoprefixer": "^7.1.2",

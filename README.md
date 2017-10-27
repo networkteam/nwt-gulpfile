@@ -121,6 +121,14 @@ Package | Command
 * [Neos](https://www.neos.io/blog/the-neos-intellij-plugin.html)
 
 
+## Releasing
+
+Create a new version with `npm version ...`, e.g. for a patch release:
+
+    npm version patch
+
+This will automatically push the tags to the repository and trigger a release to the NPM registry via a Travis CI build.
+
 License
 -------
 

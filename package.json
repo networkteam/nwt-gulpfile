@@ -1,6 +1,6 @@
 {
   "name": "@networkteam/gulpfile",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "An opinionated frontend workflow based on jonnitto/gulpfile.js",
   "repository": {
     "type": "git",

@@ -1,3 +1,9 @@
+language: node_js
+node_js:
+  - "7"
+cache: yarn
+script: echo "Nothing to test"
+
 deploy:
   provider: npm
   email: info@networkteam.com

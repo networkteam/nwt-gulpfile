@@ -1,3 +1,7 @@
+![license](https://img.shields.io/github/license/networkteam/nwt-gulpfile.svg)
+[![npm](https://img.shields.io/npm/v/@networkteam/gulpfile.svg)](https://www.npmjs.com/package/@networkteam/gulpfile)
+[![Build Status](https://travis-ci.org/networkteam/nwt-gulpfile.svg?branch=master)](https://travis-ci.org/networkteam/nwt-gulpfile)
+
 # @networkteam/gulpfile
 
 

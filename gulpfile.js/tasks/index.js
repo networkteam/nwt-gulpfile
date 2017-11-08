@@ -119,11 +119,13 @@ task.watch = () => {
      */
     if (proxySetting === true) {
       config.browserSync.proxy = func.buildProxyPath();
-    } else if (browserSync.match(/^localhost$|^127(?:\.[0-9]+){0,2}\.[0-9]+$|^(?:0*\:)*?:?0*1$)/)) {
+    } else if (proxySetting.match && proxySetting.match(/^localhost$|^127(?:\.[0-9]+){0,2}\.[0-9]+$|^(?:0*\:)*?:?0*1$/)) {
       config.browserSync.proxy = proxySetting;
     } else if (proxySetting === false) {
-      config.browserSync.server.baseDir = './Resources/Public/';
-      config.browserSync.server.directory = true;
+      config.browserSync.server = {
+        baseDir: './Resources/Public/',
+        directory: true
+      };
     }
 
     browserSync.init(config.browserSync);

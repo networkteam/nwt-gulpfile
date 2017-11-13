@@ -106,9 +106,7 @@
                     "svgo": {}
                 },
                 "short": {
-                    "font-size": {
-                        "disable": true
-                    }
+                    "fontWeights": false
                 }
             },
             "cssbeautifyOptions": {

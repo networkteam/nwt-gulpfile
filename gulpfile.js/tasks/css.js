@@ -25,7 +25,7 @@ let postScss = [
 	require('postcss-assets')(assetConf),
 	require('postcss-magic-animations')(pc.magicAnimations),
 	require('postcss-vmax'),
-	require('postcss-short'),
+	require('postcss-short')(pc.short),
 	require('postcss-center'),
 	require('postcss-grid-kiss')(pc.gridKiss),
 	require('rucksack-css')(pc.rucksack),

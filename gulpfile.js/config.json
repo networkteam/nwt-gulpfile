@@ -104,6 +104,11 @@
                     "jpegtran": {},
                     "optipng": {},
                     "svgo": {}
+                },
+                "short": {
+                    "font-size": {
+                        "disable": true
+                    }
                 }
             },
             "cssbeautifyOptions": {

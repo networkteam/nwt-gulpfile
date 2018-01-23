@@ -5,3 +5,4 @@ node_modules
 *.example
 .thumbs
 .idea
+yarn.lock

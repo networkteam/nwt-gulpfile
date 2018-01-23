@@ -50,9 +50,11 @@ if (rollupConfig.plugins.amd) {
 }
 
 rollupPlugins.push(rollupSourcemaps());
-rollupPlugins.push(globals());
+
 if (rollupConfig.buble) { rollupPlugins.push(buble()); }
 if (!rollupConfig.buble) { rollupPlugins.push(babel()); }
+
+rollupPlugins.push(globals());
 
 if (mode.minimize) { rollupPlugins.push(uglify({mangle : true})); }
 

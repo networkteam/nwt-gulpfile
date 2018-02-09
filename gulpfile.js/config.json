@@ -114,6 +114,7 @@
                 "autosemicolon": true
             }
         },
+        "postcss": true,
         "scss": true,
         "scssLint": false,
         "jsLint": true,

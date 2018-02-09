@@ -64,7 +64,7 @@ function css() {
 		.pipe(mode.maps ? sourcemaps.init({loadMaps: true}) : util.noop())
 		.pipe(sass(saasConfig))
 		.pipe(flatten())
-		.pipe(postcss(postScss))
+		.pipe(config.tasks.postcss ? postcss(postScss) : util.noop())
 		.pipe(mode.minimize ? postcss([cssnano(pc.cssnano)]) : postcss([autoprefixer(pc.cssnano.autoprefixer)]))
 		.pipe(mode.beautify ? beautify(config.tasks.css.cssbeautifyOptions) : util.noop())
 		.pipe(config.root.inlineAssets ? gulp.dest(path.join(config.root.base, config.root.inlineAssets)) : util.noop())

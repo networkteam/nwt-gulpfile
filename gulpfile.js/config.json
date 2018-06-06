@@ -146,7 +146,8 @@
                         "exclude": "node_modules/process-es6/**",
                         "include": [ "node_modules/**" ]
                     },
-                    "amd": false
+                    "amd": false,
+                    "babel": {}
                 }
             }
         },

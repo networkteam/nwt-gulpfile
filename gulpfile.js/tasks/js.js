@@ -52,7 +52,7 @@ if (rollupConfig.plugins.amd) {
 rollupPlugins.push(rollupSourcemaps());
 
 if (rollupConfig.buble) { rollupPlugins.push(buble()); }
-if (!rollupConfig.buble) { rollupPlugins.push(babel()); }
+if (!rollupConfig.buble) { rollupPlugins.push(babel(rollupConfig.plugins.babel)); }
 
 rollupPlugins.push(globals());
 

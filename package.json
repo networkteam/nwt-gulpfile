@@ -90,6 +90,7 @@
     "rollup-plugin-sourcemaps": "^0.4.2",
     "rollup-plugin-uglify": "^2.0.1",
     "rucksack-css": "^0.9.1",
+    "sass": "^1.94.1",
     "text-table": "^0.2.0",
     "through2": "^2.0.3"
   },

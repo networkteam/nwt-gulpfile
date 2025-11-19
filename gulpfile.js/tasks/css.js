@@ -4,7 +4,7 @@ if (!config.tasks.css) {
 	return false;
 }
 
-const sass         = require('gulp-sass');
+const sass         = require('gulp-sass')(require('sass'));
 const postcss      = require('gulp-postcss');
 const beautify     = require('gulp-cssbeautify');
 const cssnano      = require('cssnano'); // https://github.com/ben-eb/cssnano
